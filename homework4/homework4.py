@@ -1,0 +1,109 @@
+# ---- List Operations ----
+foods = ["sushi", "pizza", "burger", "pasta", "salad"]
+print(foods[1])
+print(foods[-1])
+foods.append("banana")
+foods.insert(0,"apple")
+del foods[2]
+print(len(foods))
+for food in foods:
+    print(food.upper())
+  # I originally wrote in foods withouts the :, but fixed it
+first_and_last = foods[:1] + foods[-1:]
+print(first_and_last)
+if "potato" in foods:
+    print("A potato!")
+else: 
+    print("No potato!")
+  # I originally wrote else with an indent, so the if-else block was incorrect
+
+# ---- Slicing and Striding ----
+numbers = list(range(0,21))
+def get_first_15(numbers):
+    return numbers[:15]
+
+def get_every_5th(numbers):
+    return numbers[::5]
+
+def reverse_and_stride(numbers):
+    return numbers[::-1][::3]
+
+step1 = get_first_15(numbers)
+step2 = get_every_5th(step1)
+step3 = reverse_and_stride(step2)
+print("numbers:", numbers)
+print("step1:", step1)
+print("step2:", step2)
+print("step3:", step3)
+  # I originally wrote "step1:," instead of "step1:", along with step 2 and 3, but fixed it
+
+# ---- Nested Lists ----
+list1= [1,2,3]
+list2= [4,5,6]
+list3= [7,8,9]
+numbers = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+print(numbers[2])
+print(numbers[1][1])
+numbers.append([10,11,12])
+def sum_nested(nested):
+    total=0
+    for row in nested:
+        for value in row:
+            total+=value
+    return total
+print(sum_nested(numbers))
+
+# ---- Create a 5x5 List ----
+def make_grid():
+    grid = []
+    for i in range(5):
+        row = []
+        for j in range(5):
+            row.append(i * 5 + j)
+        grid.append(row)
+    return grid
+  # I originally didn't write a for loop within the for loop to create each row, but fixed it
+
+def replace_threes(grid):
+    new_grid = []
+    for row in grid:
+        new_row = []
+        for value in row:
+            if value == 3:
+                new_row.append(99)
+            else:
+                new_row.append(value)
+        new_grid.append(new_row)
+    return new_grid
+  # I originally didn't append the new row to the new grid, but fixed it and added the else clause to handle other values
+
+def add_numbers(grid):
+    total = 0
+    for row in grid:
+        for value in row:
+            if value != "?":
+                total += value
+    return total
+
+# ---- Dictionaries ----
+ages = {
+    "Katie": 30,
+    "Mariam": 42,
+    "Safia": 25,
+    "Mira": 48
+}
+print(ages["Katie"])
+ages["Mira"] = 100
+ages["Mariam"] = 52
+del ages["Mariam"]
+for name, age in ages.items():
+    print(f"{name}: {age}")
+
+# ---- Running Your Code ----
+foods = ["sushi", "pizza", "burger", "pasta", "salad"]
+print(foods[1])
+print(foods[-1])
