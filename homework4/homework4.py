@@ -15,7 +15,7 @@ if "potato" in foods:
     print("A potato!")
 else: 
     print("No potato!")
-  # I originally wrote else with an indent, so the if-else block was incorrect
+  # I originally wrote the else statement with an indent, so the if-else block was incorrect
 
 # ---- Slicing and Striding ----
 numbers = list(range(0,21))
@@ -104,6 +104,5 @@ for name, age in ages.items():
     print(f"{name}: {age}")
 
 # ---- Running Your Code ----
-foods = ["sushi", "pizza", "burger", "pasta", "salad"]
 print(foods[1])
 print(foods[-1])
